@@ -1,11 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Banner from './components/Banner';
+import Info from './components/Info';
+import About from './components/About';
+import Interests from './components/Interests';
+import Footer from './components/Footer';
 
 function App() {
     return (
-        <div>
-            <Banner/>
+        <div className='container'>
+            <Info />
+            <About />
+            <Interests />
+            <Footer />
         </div>
     )
 }
