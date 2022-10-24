@@ -1,11 +1,12 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React from "react"
+import React from 'react'
 
-
-export default function Navbar() {
-    return (
-        <nav>
-            <img src='images/airbnb-logo.png' className="nav--logo" />
-        </nav>
-    )
+function Navbar() {
+  return (
+    <nav>
+      <img src="images/logo.png" alt="logo" className='nav--logo'/>
+      <p className='nav--text'>my travel journal.</p>
+    </nav>
+  )
 }
+
+export default Navbar

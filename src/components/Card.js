@@ -1,28 +1,34 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React from "react"
+/* eslint-disable no-template-curly-in-string */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from 'react'
 
-export default function Card(props) {
-    let badgeText
-    if (props.openSpots === 0) {
-        badgeText = "SOLD OUT"
-    } else if (props.location === "Online") {
-        badgeText = "ONLINE"
-    }
-
-    return (
-        <div className="card">
-            {badgeText && <div className="card--badge">{badgeText}</div>}
-            <img src={`../images/${props.coverImg}`} className="card--image" />
-            <div className="card--stats">
-                <img src="images/star.png" className="card--star" />
-                <span>{props.stats.rating}</span>
-                <span className="gray">({props.stats.reviewCount}) • </span>
-                <span className="gray">{props.location}</span>
-            </div>
-
-            <p className="card--title">{props.title}</p>
-            <p className="card--price"><span className="bold">From ${props.price}</span> / person</p>
+function Card(props) {
+  return (
+    <div className='card'>
+        
+      <img src={`../images/${props.image}`} alt="scenery" className='card--scenery'/>
+      
+      <section className='card--body'>
+        <div className='card--info'> 
+            <img src="../images/path.png" alt="path" className='card--path'/>
+            <p className='card--country'>{props.country}</p>
+            <a href={props.link} className='card--google-map' target="blank">View on Google Maps</a>
         </div>
-    )
 
+        <h1 className='card--name'>{props.scenery}</h1>
+
+
+        <h3 className='card--date'>{props.date}</h3>
+        <p className='card--description'>
+            <br /> {props.description}
+        </p>
+        
+      </section>
+    <hr />
+    
+    </div>
+
+  )
 }
+
+export default Card
