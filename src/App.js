@@ -3,21 +3,29 @@ import ReactDOM from 'react-dom'
 import Card from './components/Card';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
+import data from './data';
 
 
 function App() {
+    const card = data.map(item => {
+        return (
+            <Card
+                key={item.id}
+                {...item}
+            />
+        )
+    })
+
+
     return (
         <div className='container'>
             <Navbar />
             <Hero />
-            <Card 
-                img="katie.png"
-                rating="5.0"
-                reviewCount={6}
-                country="America"
-                title="Life Lessons with Katie Zaferes"
-                price={136}
-            />
+            <section className='cards-list'> 
+                {card}
+
+            </section>
+           
 
         </div>
     )
