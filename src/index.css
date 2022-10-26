@@ -1,106 +1,66 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .container {
-  width: 100%;
-  height: 100vh;
-  background-color: #1A1B21;
+    width: 100%;
+    height: 100vh;
 }
 
-.photo {
-  width: 317;
-  height: 317;
+nav {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    color: white;
+    padding: 20px;
 }
 
-.info {
-  text-align: center;
+.nav--logo {
+    height: 100%;
+    margin-right: 6px;
 }
 
-.name {
-  color: #fff;
-  font-family: 'Inter', sans-serif;
+.nav--title {
+    font-size: 1.25rem;
+    margin-right: auto;
 }
 
-.job {
-  color: #F3BF99;
-  font-size: 12.8;
-  font-weight: 100;
+.nav--project {
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
-.website {
-  color: #fff;
+main {
+    padding: 36px;
 }
 
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+.form {
+    display: grid;
+    grid-template: 40px 40px / 1fr 1fr;
+    gap: 17px;
 }
 
-.email-button {
-  margin-right: 20px;
-  background-color: #fff;
-  border: none;
-  padding: 1em 4em; 
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
+.form--input {
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
 }
 
-.fa-envelope {
-  margin-right: 5px;
+.form--button {
+    grid-column: 1 / -1;
+    border-radius: 5px;
+    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-.linkedin-button {
-  background-color: #5093E2;
-  border: none;
-  padding: 1em 4em; 
-  border-radius: 10px;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.linkedin {
-  color: #fff;
-  margin-right: 5px;
+.meme--image {
+    width: 100%;
 }
 
 
-.body {
-  padding: 0 32em;
-  color: #fff;
-}
-
-.title {
-  padding-top: 10px;
-}
-
-.body-text {
-  padding-top: 10px;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #161619;
-  display: flex;
-  justify-content: center;
-}
-
-.social li {
-  list-style: none;
-  display: inline-block;
-  padding: 25px;
-}
-
-.footer-icon {
-  color: #918E9B;
-  width: 25px;
-  
-}
