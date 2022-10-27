@@ -1,39 +1,33 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Star from './components/Star'
+import boxes from './boxes'
+import Box from './components/Box'
 
 
 function App() {
-    const [contact, setContact] = React.useState({
-        firstName: "John",
-        lastName: "Doe",
-        phone: "+1 (719) 555-1212",
-        email: "itsmyrealname@example.com",
-        isFavorite: true
-    })
+    const [squares, setSquares] = React.useState(boxes)
 
-    let starIcon = contact.isFavorite ? "star-filled.png" : "star-empty.png"
+    function toggle(id) {
+        setSquares(prevSquares => {
+            return prevSquares.map((square) => {
+                return square.id === id ? {...square, on: !square.on} : square
+            })
+        })
 
-    function toggleFavorite() {
-        setContact(prevContact => ({
-            ...prevContact,
-            isFavorite: !prevContact.isFavorite
-        }))
     }
 
-    return (
+    
+
+    const squareElements = squares.map(square => (
+        <Box
+            key={square.id}
+            on={square.on}
+            toggle={() => toggle(square.id)}
+        />
+    ))
+    return(
         <main>
-            <article className='card'>
-                <img src="./images/user.png" alt="user" className='card--image' />
-                <div className='card--info'>
-                    <Star isFilled={contact.isFavorite} handleClick={toggleFavorite}/>
-                    <h2 className='class--name'>
-                        {contact.firstName} {contact.lastName}
-                    </h2>
-                    <p className='card--contact'>{contact.phone}</p>
-                    <p className='card--contact'>{contact.email}</p>
-                </div>
-            </article>
+            {squareElements} 
         </main>
     )
 }
